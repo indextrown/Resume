@@ -20,7 +20,7 @@ darkmode: never
 
 # Social links
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username: jekyll
 stackoverflow_username: "00000001"
 dribbble_username: jekyll
 facebook_username: jekyll
@@ -35,9 +35,9 @@ googlescholar_username: D847cGsAAAAJ
 
 # Additional icon links
 additional_links:
-- title: Link name
-  icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-  url: Link url (eg. https://google.com)
+  - title: Link name
+    icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
+    url: Link url (eg. https://google.com)
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
 #   url: Link url (eg. https://google.com)
@@ -60,14 +60,14 @@ about_content: | # this will include new lines to allow paragraphs
 
   꾸준한 성장을 위해 1일 1커밋 활동과 기술 블로그에 공부 내용을 정리하는 습관을 유지하며 더 나은 iOS 개발자로 성장하고 있습니다.
 
-
 content:
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        border: no  # Value of `weak` will display a weak border below this item. # Any 
-                      # other value (or no value) means no border will be displayed
+        border:
+          no # Value of `weak` will display a weak border below this item. # Any
+          # other value (or no value) means no border will be displayed
         title: 팝팡
         link: https://github.com/team-PopPang/PopPang-iOS
         link_text: 팝팡 레포지토리
@@ -78,13 +78,29 @@ content:
         quote: >
           팝업스토어 키워드 알림 서비스
         description: | # this will include new lines to allow paragraphs
-          - 프론트엔드와 서버 사이드 개발을 담당했고, 실시간 랭킹 기능을 구현했습니다.
-          - 프론트엔드와 서버 사이드 개발을 담당했고, 실시간 랭킹 기능을 구현했습니다.
-          - 프론트엔드와 서버 사이드 개발을 담당했고, 실시간 랭킹 기능을 구현했습니다.
+          - Equatable 기반 SwiftUI diffing 제어로
+            View body 호출량을 약 80% 감소
+          - 반복적인 Equatable 동등성 연산자 구현 부담을 줄이기 위해
+            [AutoEquatable]() 매크로 구현
+          - withThrowingTaskGroup 기반 병렬 API 호출로
+            초기 로딩 시간 1.2초 → 0.7초로 단축
+
+        # - Equatable 채택 시 반복되는 동등성 연산자 구현 부담을 줄이기 위해
+        # [AutoEquatable]() 매크로 구현
+
+      # - SwiftUI diffing 알고리에서 Equatable을 적용해 View 업데이트 기준을 제어하고
+      #   불필요한 렌더링을 줄여 body 호출량을 약 80% 감소시켰습니다.
+
+      # - Equatable 채택 시 반복적으로 발생하는 동등성 연산자 구현 부담을 줄이기 위해
+      #   Equatable 합성을 선언적으로 처리하는 AutoEquatable 매크로를 구현했습니다.
+
+      # - `withThrowingTaskGroup` 기반 병렬 API 호출로
+      #   초기 로딩 시간을 1.2초 → 0.7초 (약 40% 개선)로 단축했습니다.
 
       - layout: left
-        border: no  # Value of `weak` will display a weak border below this item. # Any 
-                      # other value (or no value) means no border will be displayed
+        border:
+          no # Value of `weak` will display a weak border below this item. # Any
+          # other value (or no value) means no border will be displayed
         title: 코드라운지
         link: https://coderounge.example
         link_text: 코드라운지 방문하기
@@ -95,13 +111,20 @@ content:
         quote: >
           개발자를 위한 커뮤니티 및 학습 서비스
         description: | # this will include new lines to allow paragraphs
-          - iOS 앱과 웹 서비스를 함께 개발하며 코드 리뷰와 교육 자료를 제작했습니다.
-          - iOS 앱과 웹 서비스를 함께 개발하며 코드 리뷰와 교육 자료를 제작했습니다.
-          - iOS 앱과 웹 서비스를 함께 개발하며 코드 리뷰와 교육 자료를 제작했습니다.
+          - 상세 화면을 JSON 기반으로 렌더링하고 서버에서 정의한 마크다운 문법을 파싱해 UI를 구성
+          - EBNF 기반 커스텀 마크다운 문법을 직접 정의하고 이를 해석하는 파서 구현
+          - 서버 데이터 변경만으로 앱 업데이트 없이 상세 화면 변경 가능하도록 설계
+
+      # - EBNF 기반 커스텀 마크다운 문법을 정의하고, 해당 문법을 해석하는 파서 구현
+
+      # - 커스텀 마크다운 문법을 JSON으로 파싱해 상세 화면을 렌더링하는 구조 설계
+
+      # - 서버 데이터 변경만으로 앱 업데이트 없이 상세 화면을 변경할 수 있도록 구성
 
       - layout: left
-        border: no  # Value of `weak` will display a weak border below this item. # Any 
-                      # other value (or no value) means no border will be displayed
+        border:
+          no # Value of `weak` will display a weak border below this item. # Any
+          # other value (or no value) means no border will be displayed
         title: 하루한컷
         link: https://coderounge.example
         link_text: 하루한컷 방문하기
@@ -112,9 +135,26 @@ content:
         quote: >
           하루에 한 장의 사진으로 가족과 일상을 공유하는 서비스
         description: | # this will include new lines to allow paragraphs
-          - iOS 앱과 웹 서비스를 함께 개발하며 코드 리뷰와 교육 자료를 제작했습니다.
-          - iOS 앱과 웹 서비스를 함께 개발하며 코드 리뷰와 교육 자료를 제작했습니다.
-          - iOS 앱과 웹 서비스를 함께 개발하며 코드 리뷰와 교육 자료를 제작했습니다.
+          - 제네릭 Firebase CRUD 추상화로 데이터 접근 로직 중복 제거 및 Repository 구조 단순화
+          - App Group 기반 데이터 공유 구조로 앱·위젯 간 프로세스 분리 제약 해결
+
+      - layout: left
+        border:
+          no # Value of `weak` will display a weak border below this item. # Any
+          # other value (or no value) means no border will be displayed
+        title: 음메요
+        link: https://coderounge.example
+        link_text: 음메요 방문하기
+        additional_links:
+          - title: Github
+            icon: fab fa-github
+            url: https://github.com/team-RETI/EUMMEYO
+        quote: >
+          음성 -> 메모 -> 요약 서비스
+        description: | # this will include new lines to allow paragraphs
+          - 텍스트·음성 기록을 단일 모델로 관리하는 데이터 구조 설계
+          - 외부 API(GPT) 연동 결과를 화면 상태로 안정적으로 반영하는 비동기 처리 구현
+          - MVVM + Clean Architecture 적용으로 기능 확장에 대비한 구조 구성
 
   - title: Experience
     layout: list
@@ -159,25 +199,25 @@ sass:
   style: compressed
 
 plugins:
- - jekyll-seo-tag
+  - jekyll-seo-tag
 
 livereload: true
 # host: 0.0.0.0    # optional override
 # reload_port: 35730 # optional override
 
-exclude : [
-  "Gemfile",
-  "Gemfile.lock",
-  "node_modules",
-  "vendor/bundle/",
-  "vendor/cache/",
-  "vendor/gems/",
-  "vendor/ruby/",
-  "lib/",
-  "scripts/",
-  "docker-compose.yml",
+exclude:
+  [
+    "Gemfile",
+    "Gemfile.lock",
+    "node_modules",
+    "vendor/bundle/",
+    "vendor/cache/",
+    "vendor/gems/",
+    "vendor/ruby/",
+    "lib/",
+    "scripts/",
+    "docker-compose.yml",
   ]
-
 
   # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -186,5 +226,3 @@ exclude : [
   #   - Tables
   #   - <a href="google.com">Links</a>
   #   - Images ![alt text](/images/landscape-trees.jpg "Trees")
-
-  
